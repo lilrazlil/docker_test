@@ -14,6 +14,6 @@ RUN cd app/ && go mod tidy
 
 RUN cd /go/app/cmd/api/ && go build -o /go/app/api
 
-#ENTRYPOINT [ "/go/app/api" ]  
+ENTRYPOINT [ "/go/app/api" ]  
 
 EXPOSE 8081:8081
