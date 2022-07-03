@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api:
+    build: golang-api/
+    command: /go/app/api
+    ports:
+      - 8081:8081
+    links:
+      - "db:db"
+  
+  db:
+    build: golang-db/
+    command: /go/app/go-db
+    volumes:
+      - ./database:/database
+    ports:
+      - 8082:8082
