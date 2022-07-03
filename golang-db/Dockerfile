@@ -2,6 +2,10 @@ FROM golang:latest
 
 ENV DB_PORT 8082
 
+ARG ALL
+
+ENV ALL $ALL
+
 WORKDIR /go
 
 COPY /docker-go-2 ./app

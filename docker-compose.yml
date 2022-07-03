@@ -2,7 +2,7 @@ version: '3'
 
 services:
   api:
-    build: golang-api/
+    image: go-api
     command: /go/app/api
     ports:
       - 8081:8081
@@ -10,7 +10,7 @@ services:
       - "db:db"
   
   db:
-    build: golang-db/
+    image: go-db
     command: /go/app/go-db
     volumes:
       - ./database:/database
